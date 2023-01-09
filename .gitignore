@@ -1,0 +1,14 @@
+node_modules/
+.tmp.drivedownload/
+.tmp.driveupload/
+.metadata/
+bin/
+.settings/
+public/
+.classpath/
+.project/
+.vscode/
+Servers/
+Other/
+
+
