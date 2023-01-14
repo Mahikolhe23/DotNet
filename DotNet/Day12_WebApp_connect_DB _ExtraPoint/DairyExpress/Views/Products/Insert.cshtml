@@ -1,0 +1,23 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Insert Page";
+}
+<h1>Add Product</h1>
+<hr>
+<div class="text-center">
+    <form action="/Products/postinsert">
+        <label for="Title">Title:</label><br>
+        <input type="text" id="Title" name="Title" value="" required><br>
+
+        <label for="Category ">Category :</label><br>
+        <input type="text" id="Category" name="Category" value="" required><br>
+
+        <label for="UnitPrice ">UnitPrice :</label><br>
+        <input type="UnitPrice " id="UnitPrice" name="UnitPrice" value="" required><br>
+
+        <label for="Date">EXP Date:</label><br>
+        <input type="date" id="Date" name="Date" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
