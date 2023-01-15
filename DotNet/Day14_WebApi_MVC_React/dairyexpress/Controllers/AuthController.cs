@@ -23,7 +23,7 @@ public class AuthController : Controller
     {
         Manager mgr = new Manager();
         if (mgr.validateBL(email, password))
-            return Redirect("/Home/index");
+            return Redirect("/Home/welcome");
         return RedirectToAction("Login");
     }
 
