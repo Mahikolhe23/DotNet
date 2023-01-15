@@ -12,8 +12,6 @@ public class Manager
 
     public bool RegisterBL(string name, string email, string password, int mobile)
     {
-        if (DbManager.RegisterBL(name, email, password, mobile))
-            return true;
-        return false;
+        return DbManager.RegisterBL(name, email, password, mobile);
     }
 }

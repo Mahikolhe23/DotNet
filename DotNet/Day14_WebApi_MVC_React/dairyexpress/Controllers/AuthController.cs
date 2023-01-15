@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dairyexpress.Models;
-using BLL;
+using BLL;  
 
 namespace dairyexpress.Controllers;
 
@@ -23,8 +23,8 @@ public class AuthController : Controller
     {
         Manager mgr = new Manager();
         if (mgr.validateBL(email, password))
-            return Redirect("/Home/index");
-        return RedirectToAction("Login");
+            return Redirect("/Home/Welcome");
+        return RedirectToAction("Register");
     }
 
     public IActionResult Register()
@@ -37,6 +37,6 @@ public class AuthController : Controller
         Manager mgr = new Manager();
         if (mgr.RegisterBL(name, email, password, mobile))
             return Redirect("/Auth/Login");
-        return RedirectToAction("Login");
+        return RedirectToAction("Register");
     }
 }
