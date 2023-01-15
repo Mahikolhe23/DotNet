@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 public class DbManager
 {
     static string connectPath =
-        @"server=localhost;port=3307;user=root;password=root123;database=DairyExpress;";
+        @"server=localhost;port=3306;user=root;password=root123;database=DairyExpress;";
 
     //get all user from db
     public static List<User> GetAlluser()

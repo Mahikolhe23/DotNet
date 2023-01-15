@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using dairyexpress.Models;
+using staticFILE.Models;
 
-namespace dairyexpress.Controllers;
+namespace staticFILE.Controllers;
 
 public class HomeController : Controller
 {
@@ -17,16 +17,8 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Welcome()
-    {
-        return View();
-    }
 
     public IActionResult Privacy()
-    {
-        return View();
-    }
-    public IActionResult Welcome()
     {
         return View();
     }
