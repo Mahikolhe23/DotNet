@@ -1,0 +1,22 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Insert Page";
+}
+<div>
+    <h1>Ale Ka basa thoda vel ani form fill kara</h1>
+    <form method="post" action="insert">
+        <label for="name">Name :</label>
+        <input type="text" name="name" id="name" placeholder="Nav Taka" />
+        <br><br>
+        <label for="category">Category : </label>
+        <input type="text" name="category" id="category" placeholder="category Taka" />
+        <br><br>
+        <label for="unit">Unit Price : </label>
+        <input type="number" name="unit" id="unit" placeholder="Unit Price" />
+        <br><br>
+        <label for="exp">Exp Date : </label>
+        <input type="date" name="exp" id="exp" placeholder="Exp date ">
+        <br>    
+        <input type="submit">
+    </form>
+</div>

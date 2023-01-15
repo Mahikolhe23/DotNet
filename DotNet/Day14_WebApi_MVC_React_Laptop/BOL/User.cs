@@ -16,4 +16,7 @@ public class User
         this.Password = password;
         this.Mobile = mobile;
     }
+    public User(){
+        
+    }
 }
