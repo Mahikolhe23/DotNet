@@ -1,0 +1,21 @@
+@using BOL;
+@{
+    ViewData["Title"] = "Update Page";
+}
+<div>
+    <form method="post" action="update">
+        <label for="name">Enter New Name :</label>
+        <input type="text" name="name" id="name" placeholder="Enter New Nav Taka" />
+        <br><br>
+        <label for="category">Enter New Category : </label>
+        <input type="text" name="category" id="category" placeholder="Enter New category Taka" />
+        <br><br>
+        <label for="unit">Enter New Unit Price : </label>
+        <input type="number" name="unit" id="unit" placeholder="Enter New Unit Price" />
+        <br><br>
+        <label for="exp">Enter New Exp Date : </label>
+        <input type="date" name="exp" id="exp" placeholder="Enter New Exp date ">
+        <br>
+        <input type="submit">
+    </form>
+</div>

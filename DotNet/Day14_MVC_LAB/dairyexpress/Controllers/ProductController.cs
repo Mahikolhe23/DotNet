@@ -45,4 +45,22 @@ public class ProductController : Controller
             return RedirectToAction("Catalog");
         return Redirect("/Home/Welcome");
     }
+
+    public IActionResult Update(int id, string name, string category, double unit, string exp)
+    {
+       ProductMGRBLL mgr = new ProductMGRBLL();
+        bool ans = mgr.Update(id,name, category, unit, exp);
+        if (ans)
+            return RedirectToAction("Catalog");
+        return RedirectToAction("Update");
+    }
+
+    public IActionResult Delete(int id)
+    {
+        ProductMGRBLL mgr = new ProductMGRBLL();
+        bool ans = mgr.Delete(id);
+        if (ans)
+            return RedirectToAction("Catalog");
+        return Redirect("/Home/Index");
+    }
 }

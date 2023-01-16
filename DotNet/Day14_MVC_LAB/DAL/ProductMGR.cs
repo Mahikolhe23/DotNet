@@ -88,4 +88,28 @@ public class ProductMGRDAL
         }
         return ans;
     }
+
+    public static bool Delete(int id)
+    {
+        MySqlConnection con = new MySqlConnection();
+        con.ConnectionString = conpath;
+        bool ans = false;
+        try
+        {
+            con.Open();
+            string query = "delete from products where id=" + id;
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            ans = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            con.Close();
+        }
+        return ans;
+    }
 }

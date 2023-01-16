@@ -5,9 +5,7 @@ public class Manager
 {
     public bool validateBL(string email, string password)
     {
-        if (DbManager.validateDL(email, password))
-            return true;
-        return false;
+        return DbManager.validateDL(email, password);
     }
 
     public bool RegisterBL(string name, string email, string password, int mobile)

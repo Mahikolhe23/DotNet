@@ -18,4 +18,11 @@ public class ProductMGRBLL
     {
         return ProductMGRDAL.insert(name, category, unit, exp);
     }
+
+    
+
+    public bool Delete(int id)
+    {
+        return ProductMGRDAL.Delete(id);
+    }
 }
