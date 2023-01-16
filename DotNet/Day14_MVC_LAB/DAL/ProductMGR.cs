@@ -54,7 +54,7 @@ public class ProductMGRDAL
         return null;
     }
 
-    public static bool insert(string name, string category, double unit, string exp)
+    public static bool insert(int id, string name, string category, double unit, string exp)
     {
         //connect to db
         MySqlConnection con = new MySqlConnection();
@@ -65,7 +65,9 @@ public class ProductMGRDAL
         {
             con.Open();
             string query =
-                "insert into products(title,category,unitprice,expdate) values('"
+                "insert into products(id,title,category,unitprice,expdate) values('"
+                + id
+                + "','"
                 + name
                 + "','"
                 + category
@@ -89,18 +91,16 @@ public class ProductMGRDAL
         return ans;
     }
 
-    public static bool Delete(int id)
+    public static void Delete(int id)
     {
         MySqlConnection con = new MySqlConnection();
         con.ConnectionString = conpath;
-        bool ans = false;
         try
         {
             con.Open();
             string query = "delete from products where id=" + id;
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.ExecuteNonQuery();
-            ans = true;
         }
         catch (Exception e)
         {
@@ -110,6 +110,36 @@ public class ProductMGRDAL
         {
             con.Close();
         }
-        return ans;
+    }
+
+    public static void Update(int id, string name, string category, double unit, string exp)
+    {
+        MySqlConnection con = new MySqlConnection();
+        con.ConnectionString = conpath;
+        try
+        {
+            con.Open();
+            string query =
+                "update products set title='"
+                + name
+                + "',category='"
+                + category
+                + "',unitprice='"
+                + unit
+                + "',expdate='"
+                + exp
+                + "' where Id="
+                + id;
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            con.Close();
+        }
     }
 }

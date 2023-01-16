@@ -14,15 +14,18 @@ public class ProductMGRBLL
         return ProductMGRDAL.GetProduct(id);
     }
 
-    public bool insert(string name, string category, double unit, string exp)
+    public bool insert(int id, string name, string category, double unit, string exp)
     {
-        return ProductMGRDAL.insert(name, category, unit, exp);
+        return ProductMGRDAL.insert(id, name, category, unit, exp);
     }
 
-    
-
-    public bool Delete(int id)
+    public void Update(int id, string name, string category, double unit, string exp)
     {
-        return ProductMGRDAL.Delete(id);
+        ProductMGRDAL.Update(id, name, category, unit, exp);
+    }
+
+    public void Delete(int id)
+    {
+        ProductMGRDAL.Delete(id);
     }
 }

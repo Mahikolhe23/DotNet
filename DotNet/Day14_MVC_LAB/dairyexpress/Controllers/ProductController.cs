@@ -37,30 +37,32 @@ public class ProductController : Controller
     }
 
     [HttpPost]
-    public IActionResult Insert(string name, string category, double unit, string exp)
+    public IActionResult Insert(int id, string name, string category, double unit, string exp)
     {
         ProductMGRBLL mgr = new ProductMGRBLL();
-        bool ans = mgr.insert(name, category, unit, exp);
+        bool ans = mgr.insert(id, name, category, unit, exp);
         if (ans)
             return RedirectToAction("Catalog");
         return Redirect("/Home/Welcome");
     }
 
+    public IActionResult Update(int id)
+    {
+        return View();
+    }
+
+    [HttpPost]
     public IActionResult Update(int id, string name, string category, double unit, string exp)
     {
-       ProductMGRBLL mgr = new ProductMGRBLL();
-        bool ans = mgr.Update(id,name, category, unit, exp);
-        if (ans)
-            return RedirectToAction("Catalog");
-        return RedirectToAction("Update");
+        ProductMGRBLL mgr = new ProductMGRBLL();
+        mgr.Update(id, name, category, unit, exp);
+        return RedirectToAction("Catalog");
     }
 
     public IActionResult Delete(int id)
     {
         ProductMGRBLL mgr = new ProductMGRBLL();
-        bool ans = mgr.Delete(id);
-        if (ans)
-            return RedirectToAction("Catalog");
-        return Redirect("/Home/Index");
+        mgr.Delete(id);
+        return RedirectToAction("Catalog");
     }
 }
