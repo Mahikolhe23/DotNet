@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Update Page";
+}
+<div>
+    <form action="/Student/Update" method="post">
+        <label for="roll">Enter Old Roll No : </label>
+        <input type="number" name="rollno" id="roll" />
+        <br><br>
+        <label for="name">Enter New Name : </label>
+        <input type="text" name="name" id="name" />
+        <br><br>
+        <label for="email">Enter New Email : </label>
+        <input type="email" name="email" id="email" />
+        <br><br>
+        <label for="city">Enter New City : </label>
+        <input type="text" name="city" id="city" />
+        <br><br>
+        <input type="submit">
+    </form>
+</div>

@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 public class ProductMGRDAL
 {
     static string conpath =
-        @"server=localhost;port=3307;user=root;password=root123;database=dairyexpress;";
+        @"server=localhost;port=3306;user=root;password=root123;database=dairyexpress;";
 
     public static List<Product> GetAllProducts()
     {
